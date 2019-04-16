@@ -10,17 +10,17 @@ use cocoa::appkit::{NSApp, NSApplication, NSApplicationActivationPolicyRegular,
                     NSApplicationActivateIgnoringOtherApps};
 
 fn main() {
-	unsafe {
-		let _pool = NSAutoreleasePool::new(nil);
+    unsafe {
+        let _pool = NSAutoreleasePool::new(nil);
 
-		let app = NSApp();
-		app.setActivationPolicy_(NSApplicationActivationPolicyRegular);
+        let app = NSApp();
+        app.setActivationPolicy_(NSApplicationActivationPolicyRegular);
 
         add_menu(&app);
         add_window();
         focus_app();
         app.run();
-	}
+    }
 }
 
 /// Focus the app onscreen when launched
